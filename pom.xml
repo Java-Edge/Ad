@@ -8,6 +8,9 @@
     <artifactId>sss-ad</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>ad-eureka</module>
+    </modules>
 
     <name>sss-ad-spring-cloud</name>
     <description>Project For JavaEdge Ad SpringCloud</description>
