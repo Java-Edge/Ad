@@ -1,18 +1,46 @@
+---
 spring:
   application:
     name: ad-eureka
-
+# 应用打成 jar 包后,需使用 profile 文件启动
+  profiles: server1
 server:
   port: 8000
-
 eureka:
   instance:
-#   单机版本
-    hostname: localhost
+    hostname: server1
+#   单机环境,不需要使用 ip 地址注册
+    prefer-ip-address: false
   client:
-#   是否从 e-s 获取注册信息,单节点无需同步,因此设为 false
-    fetch-registry: false
-#   本身就是 e-s
-    register-with-eureka: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://server2:8001/eureka/,http://server3:8002/eureka/
+
+---
+spring:
+  application:
+    name: ad-eureka
+  profiles: server2
+server:
+  port: 8001
+eureka:
+  instance:
+    hostname: server2
+    prefer-ip-address: false
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/,http://server3:8002/eureka/
+
+---
+spring:
+  application:
+    name: ad-eureka
+  profiles: server3
+server:
+  port: 8002
+eureka:
+  instance:
+    hostname: server3
+    prefer-ip-address: false
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/,http://server2:8001/eureka/
