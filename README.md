@@ -1,5 +1,3 @@
-# sss-ad-spring-cloud
-
 # SpringCloud＋Kafka＋MySQL实现微服务架构下的广告系统
 掌握了广告系统，就是掌握了很多互联网公司的收入核心，你自然也就是公司的核心！
 
