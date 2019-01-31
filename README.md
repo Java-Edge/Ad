@@ -1,3 +1,13 @@
+# 0 联系我
+![](http://upload-images.jianshu.io/upload_images/4685968-6a8b28d2fd95e8b7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 "图片标题") 
+1.[Java开发技术交流Q群](https://jq.qq.com/?_wv=1027&k=5UB4P1T)
+
+2.[完整博客链接](http://www.shishusheng.com)
+
+3.[个人知乎](http://www.zhihu.com/people/shi-shu-sheng-)
+
+4.[gayhub](https://github.com/Wasabi1234)
+
 # SpringCloud＋Kafka＋MySQL实现微服务架构下的广告系统
 掌握了广告系统，就是掌握了很多互联网公司的收入核心，你自然也就是公司的核心！
 
@@ -18,6 +28,5 @@ https://www.jianshu.com/p/5504269507f1
 https://www.jianshu.com/p/e3c2b9e729dd
 
 
-![](https://upload-images.jianshu.io/upload_images/4685968-bbc7dfc37a580da5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](https://upload-images.jianshu.io/upload_images/4685968-c88d77d6f38a771b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](https://upload-images.jianshu.io/upload_images/4685968-091b54b1fa8b5748.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
