@@ -10,6 +10,7 @@
         <module name="ad-common" />
         <module name="ad-eureka" />
         <module name="ad-gateway" />
+        <module name="ad-sponsor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +23,7 @@
       <module name="ad-eureka" options="-parameters" />
       <module name="ad-gateway" options="-parameters" />
       <module name="ad-getway" options="-parameters" />
+      <module name="ad-sponsor" options="-parameters" />
       <module name="javaedge-ad-service" options="-parameters" />
     </option>
   </component>
