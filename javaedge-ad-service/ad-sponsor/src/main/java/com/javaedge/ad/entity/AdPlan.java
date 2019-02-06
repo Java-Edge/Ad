@@ -31,7 +31,7 @@ public class AdPlan {
      */
     @Basic
     @Column(name = "user_id", nullable = false)
-    private Integer userId;
+    private Long userId;
 
     @Basic
     @Column(name = "plan_name", nullable = false)
@@ -57,7 +57,7 @@ public class AdPlan {
     @Column(name = "update_time", nullable = false)
     private Date updateTime;
 
-    public AdPlan(Integer userId, String planName, Date startDate, Date endDate) {
+    public AdPlan(Long userId, String planName, Date startDate, Date endDate) {
         this.userId = userId;
         this.planName = planName;
         this.startDate = startDate;
