@@ -28,13 +28,13 @@ public class AdUnitKeyword {
      */
     @Basic
     @Column(name = "unit_id", nullable = false)
-    private Integer unitId;
+    private Long unitId;
 
     @Basic
     @Column(name = "keyword", nullable = false)
     private String keyword;
 
-    public AdUnitKeyword(Integer unitId, String keyword) {
+    public AdUnitKeyword(Long unitId, String keyword) {
         this.unitId = unitId;
         this.keyword = keyword;
     }

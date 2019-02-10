@@ -28,7 +28,7 @@ public class AdUnitDistrict {
      */
     @Basic
     @Column(name = "unit_id", nullable = false)
-    private Integer unitId;
+    private Long unitId;
 
     @Basic
     @Column(name = "city", nullable = false)
@@ -38,7 +38,7 @@ public class AdUnitDistrict {
     @Column(name = "city", nullable = false)
     private String city;
 
-    public AdUnitDistrict(Integer unitId, String province, String city) {
+    public AdUnitDistrict(Long unitId, String province, String city) {
         this.unitId = unitId;
         this.province = province;
         this.city = city;

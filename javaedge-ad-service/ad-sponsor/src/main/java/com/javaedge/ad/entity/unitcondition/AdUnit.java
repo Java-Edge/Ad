@@ -31,7 +31,7 @@ public class AdUnit {
      */
     @Basic
     @Column(name = "plan_id", nullable = false)
-    private Integer planId;
+    private Long planId;
 
     @Basic
     @Column(name = "unit_name", nullable = false)
@@ -47,7 +47,7 @@ public class AdUnit {
      */
     @Basic
     @Column(name = "position_type", nullable = false)
-    private Date positionType;
+    private Integer positionType;
 
     @Basic
     @Column(name = "budget", nullable = false)
@@ -61,7 +61,7 @@ public class AdUnit {
     @Column(name = "update_time", nullable = false)
     private Date updateTime;
 
-    public AdUnit(Integer planId, String unitName, Date positionType, Long budget) {
+    public AdUnit(Long planId, String unitName, Integer positionType, Long budget) {
         this.planId = planId;
         this.unitName = unitName;
         this.unitStatus = CommonStatus.VALID.getStatus();

@@ -28,13 +28,13 @@ public class AdUnitIt {
      */
     @Basic
     @Column(name = "unit_id", nullable = false)
-    private Integer unitId;
+    private Long unitId;
 
     @Basic
     @Column(name = "it_tag", nullable = false)
     private String itTag;
 
-    public AdUnitIt(Integer unitId, String itTag) {
+    public AdUnitIt(Long unitId, String itTag) {
         this.unitId = unitId;
         this.itTag = itTag;
     }
