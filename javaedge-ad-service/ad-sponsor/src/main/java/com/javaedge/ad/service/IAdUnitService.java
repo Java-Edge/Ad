@@ -1,10 +1,7 @@
 package com.javaedge.ad.service;
 
-import com.javaedge.ad.entity.AdPlan;
 import com.javaedge.ad.exception.AdException;
 import com.javaedge.ad.vo.*;
-
-import java.util.List;
 
 /**
  * @fun 推广单元接口
@@ -35,6 +32,9 @@ public interface IAdUnitService {
             throws AdException;
 
     AdUnitDistrictResponse createUnitDistrict(AdUnitDistrictRequest request)
+            throws AdException;
+
+    CreativeUnitResponse createCreativeUnit(CreativeUnitRequest request)
             throws AdException;
 
 }

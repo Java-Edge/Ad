@@ -1,21 +1,15 @@
 package com.javaedge.ad.service.impl;
 
-import com.javaedge.ad.constant.CommonStatus;
 import com.javaedge.ad.constant.Constants;
 import com.javaedge.ad.dao.AdPlanRepository;
 import com.javaedge.ad.dao.AdUnitRepository;
-import com.javaedge.ad.dao.AdUserRepository;
 import com.javaedge.ad.dao.CreativeRepository;
 import com.javaedge.ad.dao.unitcondition.AdUnitDistrictRepository;
 import com.javaedge.ad.dao.unitcondition.AdUnitItRepository;
 import com.javaedge.ad.dao.unitcondition.AdUnitKeywordRepository;
 import com.javaedge.ad.dao.unitcondition.CreativeUnitRepository;
 import com.javaedge.ad.entity.AdPlan;
-import com.javaedge.ad.entity.AdUser;
-import com.javaedge.ad.entity.unitcondition.AdUnit;
-import com.javaedge.ad.entity.unitcondition.AdUnitDistrict;
-import com.javaedge.ad.entity.unitcondition.AdUnitIt;
-import com.javaedge.ad.entity.unitcondition.AdUnitKeyword;
+import com.javaedge.ad.entity.unitcondition.*;
 import com.javaedge.ad.exception.AdException;
 import com.javaedge.ad.service.IAdUnitService;
 import com.javaedge.ad.vo.*;
@@ -103,7 +97,7 @@ public class AdUnitServiceImpl implements IAdUnitService {
         List<AdUnitKeyword> unitKeywords = new ArrayList<>();
         if (!CollectionUtils.isEmpty(request.getUnitKeywords())) {
 
-            request.getUnitKeywor5ds().forEach(i -> unitKeywords.add(
+            request.getUnitKeywords().forEach(i -> unitKeywords.add(
                     new AdUnitKeyword(i.getUnitId(), i.getKeyword())
             ));
             ids = unitKeywordRepository.saveAll(unitKeywords).stream()
@@ -138,7 +132,6 @@ public class AdUnitServiceImpl implements IAdUnitService {
 
     @Override
     public AdUnitDistrictResponse createUnitDistrict(AdUnitDistrictRequest request) throws AdException {
-.
         List<Long> unitIds = request.getUnitDistricts().stream()
                 .map(AdUnitDistrictRequest.UnitDistrict::getUnitId)
                 .collect(Collectors.toList());
@@ -167,4 +160,40 @@ public class AdUnitServiceImpl implements IAdUnitService {
         return unitRepository.findAllById(unitIds).size() == new HashSet<>(unitIds).size();
     }
 
+    @Override
+    public CreativeUnitResponse createCreativeUnit(CreativeUnitRequest request) throws AdException {
+
+        List<Long> unitIds = request.getUnitItems().stream()
+                .map(CreativeUnitRequest.CreativeUnitItem::getUnitId)
+                .collect(Collectors.toList());
+        List<Long> creativeIds = request.getUnitItems().stream()
+                .map(CreativeUnitRequest.CreativeUnitItem::getCreativeId)
+                .collect(Collectors.toList());
+
+        if (!(isRelatedUnitExist(unitIds) && isRelatedUnitExist(creativeIds))) {
+            throw new AdException(Constants.ErrorMsg.REQUEST_PARAM_ERROR);
+        }
+
+        List<CreativeUnit> creativeUnits = new ArrayList<>();
+        request.getUnitItems().forEach(i -> creativeUnits.add(
+                new CreativeUnit(i.getCreativeId(), i.getUnitId())
+        ));
+
+        List<Long> ids = creativeUnitRepository.saveAll(creativeUnits)
+                .stream()
+                .map(CreativeUnit::getId)
+                .collect(Collectors.toList());
+
+        return new CreativeUnitResponse(ids);
+    }
+
+    private boolean isRelatedCreativeExist(List<Long> creativeIds) {
+
+        if (CollectionUtils.isEmpty(creativeIds)) {
+            return false;
+        }
+
+        return creativeRepository.findAllById(creativeIds).size() ==
+                new HashSet<>(creativeIds).size();
+    }
 }

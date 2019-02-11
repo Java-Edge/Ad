@@ -28,14 +28,14 @@ import java.util.Optional;
  * @date 2019/2/6
  */
 @Service
-public class IAdPlanServiceImpl implements IAdPlanService {
+public class AdPlanServiceImpl implements IAdPlanService {
 
     private final AdUserRepository userRepository;
 
     private final AdPlanRepository planRepository;
 
     @Autowired
-    public IAdPlanServiceImpl(AdUserRepository userRepository, AdPlanRepository planRepository) {
+    public AdPlanServiceImpl(AdUserRepository userRepository, AdPlanRepository planRepository) {
         this.userRepository = userRepository;
         this.planRepository = planRepository;
     }
