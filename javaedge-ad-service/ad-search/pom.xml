@@ -50,11 +50,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
+
         <!-- 引入服务消费者 Ribbon 的依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
+
         <!-- Java Persistence API, ORM 规范 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
