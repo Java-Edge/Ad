@@ -1,7 +1,7 @@
 server:
   port: 7000
   servlet:
-#    所有控制器的前缀
+#    所有 controller 的前缀
     context-path: /ad-sponsor
 
 spring:

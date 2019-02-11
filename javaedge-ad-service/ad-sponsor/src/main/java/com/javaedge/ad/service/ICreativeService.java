@@ -9,5 +9,11 @@ import com.javaedge.ad.vo.CreativeResponse;
  */
 public interface ICreativeService {
 
+    /**
+     * 创建创意
+     *
+     * @param request
+     * @return
+     */
     CreativeResponse createCreative(CreativeRequest request);
 }
