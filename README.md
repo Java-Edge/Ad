@@ -11,6 +11,14 @@
 # SpringCloud＋Kafka＋MySQL实现微服务架构下的广告系统
 掌握了广告系统，就是掌握了很多互联网公司的收入核心，你自然也就是公司的核心！
 
+# 环境参数
+JDK 1.8 
+SpringCloud: Finchley.RELEASE 
+Kafka 2.0 
+Maven 3.5.0 
+MySQL 5.7 
+IDE IntelliJ IDEA: 2019.1
+
 # 1 博客教程
 ## 1.1 [项目简介](https://www.jianshu.com/p/69a703b080b6)
 广告系统的介绍、所使用的技术介绍、学习规划,广告系统的思想、广告系统的技术实现架构、准备工作和广告系统的代码目录结构等
