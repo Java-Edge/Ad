@@ -50,7 +50,7 @@ adconf:
     username: root
     password: root
     binlogName: binlog.000038
-    position: 60451
+    position: -1
 
   kafka:
     topic: ad-search-mysql-data
