@@ -44,4 +44,11 @@ IDE IntelliJ IDEA: 2019.1
 ## 1.8 [广告检索系统-监听Binlog构造增量数据](https://blog.csdn.net/qq_33589510/article/details/87881882)
 介绍MySQL Binlog，哪些作用和特性；怎样实现监听Binlog构造增量数据
 
+## 1.9 广告检索系统 - Binlog增量数据的投递
+Binlog 增量数据可以有多种用途，也就对应着多种数据投递方案.
+本节会实现增量数据投递构建增量索引，以及投递到 Kafka 用于扩展工作
+
+## 1.10 [广告检索系统-广告检索服务]()
+广告系统最重要的功能当然是实现广告的检索，本节首先定义媒体方请求数据的格式和检索服务返回广告数据的格式，再去根据多种筛选策略实现对索引数据的筛选，最终完成广告检索服务
+        
 ![](https://upload-images.jianshu.io/upload_images/4685968-091b54b1fa8b5748.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
