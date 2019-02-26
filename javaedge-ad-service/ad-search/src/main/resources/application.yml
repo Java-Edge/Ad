@@ -52,5 +52,5 @@ adconf:
     binlogName: binlog.000038
     position: -1
 
-  kafka:
-    topic: ad-search-mysql-data
+#  kafka:
+#    topic: ad-search-mysql-data

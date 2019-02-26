@@ -38,7 +38,10 @@ IDE IntelliJ IDEA: 2019.1
 ## 1.6 [广告检索系统 - 广告数据索引的设计与实现]
 广告检索系统的核心是实现广告检索服务，为加快广告检索的速度，良好的索引设计是不可缺少的。本章首先对索引的设计与维护进行介绍，之后，实现广告数据的索引服务。
 
+## 1.7 [广告检索系统 - 加载全量索引]()
+广告数据导出的实现，之后各层级索引操作的实现，最后完成全量索引的加载操作
 
-![](https://upload-images.jianshu.io/upload_images/4685968-c88d77d6f38a771b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+## 1.8 [广告检索系统-监听Binlog构造增量数据](https://blog.csdn.net/qq_33589510/article/details/87881882)
+介绍MySQL Binlog，哪些作用和特性；怎样实现监听Binlog构造增量数据
 
 ![](https://upload-images.jianshu.io/upload_images/4685968-091b54b1fa8b5748.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
