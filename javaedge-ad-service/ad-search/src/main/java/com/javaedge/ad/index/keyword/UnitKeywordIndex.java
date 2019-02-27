@@ -1,6 +1,7 @@
 package com.javaedge.ad.index.keyword;
 
 import com.javaedge.ad.index.IndexAware;
+import com.javaedge.ad.index.district.UnitDistrictIndex;
 import com.javaedge.ad.utils.CommonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
@@ -49,17 +50,7 @@ public class UnitKeywordIndex implements IndexAware<String, Set<Long>> {
 
         log.info("UnitKeywordIndex, before add: {}", unitKeywordMap);
 
-        Set<Long> unitIdSet = CommonUtils.getorCreate(key, keywordUnitMap, ConcurrentSkipListSet::new);
-
-        unitIdSet.addAll(value);
-
-        for (Long unitId : value) {
-            Set<String> keywordSet = CommonUtils.getorCreate(
-                    unitId, unitKeywordMap,
-                    ConcurrentSkipListSet::new
-            );
-            keywordSet.add(key);
-        }
+        UnitDistrictIndex.changeADD(key, value, keywordUnitMap, unitKeywordMap);
 
         log.info("UnitKeywordIndex, after add: {}", unitKeywordMap);
     }
@@ -82,16 +73,7 @@ public class UnitKeywordIndex implements IndexAware<String, Set<Long>> {
 
         log.info("UnitKeywordIndex, before delete: {}", unitKeywordMap);
 
-        Set<Long> unitIds = CommonUtils.getorCreate(key, keywordUnitMap, ConcurrentSkipListSet::new);
-
-        unitIds.removeAll(value);
-
-        for (Long unitId : value) {
-
-            Set<String> keywordSet = CommonUtils.getorCreate(unitId, unitKeywordMap, ConcurrentSkipListSet::new);
-
-            keywordSet.remove(key);
-        }
+        UnitDistrictIndex.changeRM(key, value, keywordUnitMap, unitKeywordMap);
 
         log.info("UnitKeywordIndex, after delete: {}", unitKeywordMap);
     }
