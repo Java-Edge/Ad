@@ -15,3 +15,7 @@ zuul:
       path: /ad-sponsor/**
       serviceId: eureka-client-ad-sponsor
       strip-prefix: false
+    search:
+      path: /ad-search/**
+      serviceId: eureka-client-ad-search
+      strip-prefix: false
