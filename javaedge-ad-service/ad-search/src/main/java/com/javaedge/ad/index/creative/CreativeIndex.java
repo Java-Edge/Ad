@@ -27,7 +27,6 @@ public class CreativeIndex implements IndexAware<Long, CreativeObject> {
     }
 
     public List<CreativeObject> fetch(Collection<Long> adIds) {
-
         if (CollectionUtils.isEmpty(adIds)) {
             return Collections.emptyList();
         }
@@ -40,10 +39,8 @@ public class CreativeIndex implements IndexAware<Long, CreativeObject> {
                 log.error("CreativeObject not found: {}", u);
                 return;
             }
-
             result.add(object);
         });
-
         return result;
     }
 
@@ -54,7 +51,6 @@ public class CreativeIndex implements IndexAware<Long, CreativeObject> {
 
     @Override
     public void add(Long key, CreativeObject value) {
-
         log.info("before add: {}", objectMap);
         objectMap.put(key, value);
         log.info("after add: {}", objectMap);
@@ -62,7 +58,6 @@ public class CreativeIndex implements IndexAware<Long, CreativeObject> {
 
     @Override
     public void update(Long key, CreativeObject value) {
-
         log.info("before update: {}", objectMap);
 
         CreativeObject oldObject = objectMap.get(key);
@@ -77,7 +72,6 @@ public class CreativeIndex implements IndexAware<Long, CreativeObject> {
 
     @Override
     public void delete(Long key, CreativeObject value) {
-
         log.info("before delete: {}", objectMap);
         objectMap.remove(key);
         log.info("after delete: {}", objectMap);

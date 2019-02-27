@@ -50,7 +50,6 @@ public class CreativeUnitIndex implements IndexAware<String, CreativeUnitObject>
 
     @Override
     public void add(String key, CreativeUnitObject value) {
-
         log.info("before add: {}", objectMap);
 
         objectMap.put(key, value);
@@ -74,13 +73,11 @@ public class CreativeUnitIndex implements IndexAware<String, CreativeUnitObject>
 
     @Override
     public void update(String key, CreativeUnitObject value) {
-
         log.error("CreativeUnitIndex not support update");
     }
 
     @Override
     public void delete(String key, CreativeUnitObject value) {
-
         log.info("before delete: {}", objectMap);
 
         objectMap.remove(key);
@@ -99,7 +96,6 @@ public class CreativeUnitIndex implements IndexAware<String, CreativeUnitObject>
     }
 
     public List<Long> selectAds(List<AdUnitObject> unitObjects) {
-
         if (CollectionUtils.isEmpty(unitObjects)) {
             return Collections.emptyList();
         }
@@ -107,7 +103,6 @@ public class CreativeUnitIndex implements IndexAware<String, CreativeUnitObject>
         List<Long> result = new ArrayList<>();
 
         for (AdUnitObject unitObject : unitObjects) {
-
             Set<Long> adIds = unitCreativeMap.get(unitObject.getUnitId());
             if (CollectionUtils.isNotEmpty(adIds)) {
                 result.addAll(adIds);
